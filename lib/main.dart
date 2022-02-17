@@ -32,26 +32,30 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter App 2'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Container(
-              width: double.infinity,
-              child: Card(
-                color: Colors.lightBlue,
-                child: Text('CHART!'),
-                elevation: 5,
-              ),
+      appBar: AppBar(
+        title: const Text('Flutter App 2'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Container(
+            width: double.infinity,
+            child: Card(
+              color: Colors.lightBlue,
+              child: Text('CHART!'),
+              elevation: 5,
             ),
-            Card(
-              color: Colors.red,
-              child: Text('List Of TX'),
-            ),
-          ],
-        ));
+          ),
+          Column(
+            children: transactions.map((tx) {
+              return Card(
+                child: Text(tx.title),
+              );
+            }).toList(),
+          ),
+        ],
+      ),
+    );
   }
 }
