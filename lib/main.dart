@@ -17,18 +17,22 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Flutter App'),
+          title: const Text('Flutter App 2'),
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Card(
-              child: Container(
-                width: 100,
+            Container(
+              width: double.infinity,
+              child: Card(
+                color: Colors.lightBlue,
                 child: Text('CHART!'),
+                elevation: 5,
               ),
-              elevation: 5,
             ),
             Card(
+              color: Colors.red,
               child: Text('List Of TX'),
             ),
           ],
